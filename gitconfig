@@ -5,6 +5,9 @@ email = jacobe@github.com
 [github]
 user = jacobe
 
+[pull]
+rebase = true
+
 [push]
 default = simple
 

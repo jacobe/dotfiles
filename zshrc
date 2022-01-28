@@ -4,7 +4,6 @@ if [ $CODESPACES ]; then
 else
   DOTFILES_DIR="$HOME/dotfiles"
 fi
-echo $DOTFILES_DIR
 
 source $DOTFILES_DIR/env
 source $DOTFILES_DIR/aliases
