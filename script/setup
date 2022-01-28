@@ -19,7 +19,7 @@ if [ $CODESPACES ]; then
 
   # Install other utilities
   apt-get install -y \
-    ripgrep
+    ripgrep less vim
 fi
 
 export ZSH=$HOME/.oh-my-zsh
