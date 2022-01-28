@@ -1,7 +1,13 @@
 # ZSH configuration file
+if [ $CODESPACES ]; then
+  DOTFILES_DIR="/workspaces/.codespaces/.persistedshare/dotfiles"
+else
+  DOTFILES_DIR="$HOME/dotfiles"
+fi
+echo $DOTFILES_DIR
 
-source ~/dotfiles/env
-source ~/dotfiles/aliases
+source $DOTFILES_DIR/env
+source $DOTFILES_DIR/aliases
 
 # Install nodenv
 eval "$(nodenv init -)"
