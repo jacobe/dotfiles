@@ -16,14 +16,12 @@ eval "$(rbenv init -)"
 # Install direnv
 eval "$(direnv hook zsh)"
 
-# Install shell completions
-eval $(gh completion --shell zsh)
-eval $(npm completion)
-
 # Configure oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 plugins=(z zsh-autosuggestions zsh-syntax-highlighting)
+autoload -U compinit
+compinit -i
 
 # Allow for local ZSH overrides
 if [ -f ~/.zshrc_local ]; then
