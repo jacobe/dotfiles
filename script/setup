@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+DOTFILES_DIR=$(cd $(dirname "$0")/.. && pwd)
+
+echo "Creating symlinks..."
+ln -s ${DOTFILES_DIR}/zshrc ~/.zshrc
+ln -s ${DOTFILES_DIR}/gitconfig ~/.gitconfig
+
+echo "Finished installing dotfiles"

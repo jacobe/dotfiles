@@ -1,0 +1,16 @@
+[user]
+name = Jacob Eisenberg
+email = jacobe@github.com
+
+[github]
+user = jacobe
+
+[push]
+default = simple
+
+[alias]
+cm = commit --verbose -m
+m = commit --verbose --amend --no-edit
+co = checkout
+br = branch
+publish = "!BRANCH=$(git rev-parse --abbrev-ref HEAD) && git push -u origin $BRANCH"

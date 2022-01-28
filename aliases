@@ -1,0 +1,6 @@
+# Shell aliases
+
+# Git aliases
+alias g='git'
+alias gs='git status'
+alias ga='git add -p .'
