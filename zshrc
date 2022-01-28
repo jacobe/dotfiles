@@ -16,6 +16,9 @@ eval "$(direnv hook zsh)"
 eval $(gh completion --shell zsh)
 eval $(npm completion)
 
+# Install autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Allow for local overrides
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
