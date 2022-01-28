@@ -1,6 +1,25 @@
 #!/usr/bin/env sh
 
 DOTFILES_DIR=$(cd $(dirname "$0")/.. && pwd)
+if [ $CODESPACES ]; then
+  # Always want to use ZSH as my default shell (e.g. for SSH)
+  if ! grep -q "root.*/bin/zsh" /etc/passwd
+  then
+    apt-get install -y zsh
+    chsh -s /bin/zsh root
+  fi
+
+  # Install GitHub CLI
+  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+  apt update
+  apt install gh
+
+  # Install other utilities
+  apt-get install -y \
+    ripgrep \
+    zsh-autosuggestion
+fi
 
 echo "Creating symlinks..."
 ln -s ${DOTFILES_DIR}/zshrc ~/.zshrc
