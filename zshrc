@@ -23,6 +23,10 @@ plugins=(z zsh-autosuggestions zsh-syntax-highlighting)
 autoload -U compinit
 compinit -i
 
+# Configure custom keyboard mappings
+bindkey "^[D" backward-word
+bindkey "^[C" forward-word
+
 # Allow for local ZSH overrides
 if [ -f ~/.zshrc_local ]; then
   source ~/.zshrc_local
