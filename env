@@ -7,3 +7,8 @@ export GIT_EDITOR="${EDITOR}"
 
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# Nodenv
+if [ -d "$HOME/.nodenv/bin" ]; then
+  export PATH="$HOME/.nodenv/bin:$PATH"
+fi

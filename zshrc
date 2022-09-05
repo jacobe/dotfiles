@@ -10,13 +10,13 @@ source $DOTFILES_DIR/env
 source $DOTFILES_DIR/aliases
 
 # Initialize version managers
-if command -v nodenv &> /dev/null; then
+if [ -x "$(command -v nodenv)" ]; then
   eval "$(nodenv init -)"
 fi
-if command -v rbenv &> /dev/null; then
+if [ -x "$(command -v rbenv)" ]; then
   eval "$(rbenv init -)"
 fi
-if command -v pyenv &> /dev/null; then
+if [ -x "$(command -v pyenv)" ]; then
   eval "$(pyenv init -)"
 fi
 
