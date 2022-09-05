@@ -9,9 +9,16 @@ fi
 source $DOTFILES_DIR/env
 source $DOTFILES_DIR/aliases
 
-# Install version managers
-eval "$(nodenv init -)"
-eval "$(rbenv init -)"
+# Initialize version managers
+if command -v nodenv &> /dev/null; then
+  eval "$(nodenv init -)"
+fi
+if command -v rbenv &> /dev/null; then
+  eval "$(rbenv init -)"
+fi
+if command -v pyenv &> /dev/null; then
+  eval "$(pyenv init -)"
+fi
 
 # Install direnv
 eval "$(direnv hook zsh)"
