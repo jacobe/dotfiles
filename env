@@ -8,6 +8,11 @@ export GIT_EDITOR="${EDITOR}"
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Nodenv
 if [ -d "$HOME/.nodenv/bin" ]; then
   export PATH="$HOME/.nodenv/bin:$PATH"
