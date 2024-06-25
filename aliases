@@ -4,3 +4,4 @@
 alias g='git'
 alias gs='git status'
 alias ga='git add -p .'
+alias gp='g pull --autostash'
